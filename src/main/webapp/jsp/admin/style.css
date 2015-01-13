@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+font-family: "Segoe UI";
+}
+.divmain {
+	width:300px; 
+	border: 1px solid #A9CDEB;
+	margin-left: auto;
+    margin-right: auto;
+	text-align:center;
+	vertical-align:middle;
+			
+}
+.divinner {
+	width:230px;
+	margin-left: auto;
+    	margin-right: auto;
+	text-align:right;
+	vertical-align:middle;
+		
+}
+
+.admininfo {
+	width:250px; 
+	border: 1px solid #A9CDEB;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.adminslinks {
+	margin-left: auto;
+	margin-right: auto;
+	width:300px; 
+	border: 1px solid #A9CDEB;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.userslinks {
+	margin-left: auto;
+	margin-right: auto;
+	width:300px; 
+	border: 1px solid #A9CDEB;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.userinfo {
+	width:250px; 
+	border: 1px solid #9BE58F;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.usertable {
+	margin-left: auto;
+	margin-right: auto;
+	width:300px; 
+	border: 1px solid #A9CDEB;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.button {
+	width:70px;
+	margin-left:10px;
+	margin-right:10px;
+}
+
+.newuser {
+	border: 1px solid #A9CDEB;
+	width:300px;
+	margin-left: auto;
+    margin-right: auto;
+	text-align:center;
+	vertical-align:middle;
+}
+.newuserinner {
+width: 280px;
+text-align:right;
+vertical-align:middle;
+}
+
+TABLE {
+	font-family: "Segoe UI";
+	margin:auto;
+	border-collapse: collapse;
+	border: 1px;
+}
+TH, TD {
+    border: 1px solid #70ACFF; /* Параметры рамки */
+    padding: 4px; /* Поля вокруг текста */
+   }
+   
+
+
