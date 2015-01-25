@@ -14,11 +14,11 @@
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
 <c:out value="${info}"/>
-<br> <a href="http://localhost:8080/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
-<br><a href="<c:url value="${'http://localhost:8080/MainServlet/logout'}"></c:url>">Logout</a>
+<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+<br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div>
-<p align="center"> <a href="http://localhost:8080/MainServlet/activeservice"><b> Active service list </b></a> </p>
+<p align="center"> <a href="/MainServlet/activeservice"><b> Active service list </b></a> </p>
  <table>
         <thead>
             <tr>
@@ -46,8 +46,8 @@
                     <td><c:out value="${aservice.service.description}" /></td>
                     <td><c:out value="${aservice.service.ID}" /></td>
                     <td><c:out value="${aservice.service.price}" /></td>
-                    <td><a href="http://localhost:8080/MainServlet/changeServiceStatus?ID_order=<c:out value="${aservice.ID_order}"/>&status=<c:out value="${aservice.status}"/>">Change status</a></td>
-                    <td><a href="http://localhost:8080/MainServlet/deleteActiveService?ID_order=<c:out value="${aservice.ID_order}"/>">Delete order</a></td>
+                    <td><a href="/MainServlet/changeServiceStatus?ID_order=<c:out value="${aservice.ID_order}"/>&status=<c:out value="${aservice.status}"/>">Change status</a></td>
+                    <td><a href="/MainServlet/deleteActiveService?ID_order=<c:out value="${aservice.ID_order}"/>">Delete order</a></td>
                     
                                       
                 </tr>

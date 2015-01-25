@@ -7,11 +7,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import artemgvozdik.provider.dao.TariffDAO;
 import artemgvozdik.provider.handler.Handler;
 
 public class DeleteTariffHandler extends Handler {
-
+	static Logger logger = Logger.getLogger(DeleteTariffHandler.class);
 	@Override
 	public void doAction(HttpServletRequest req, HttpServletResponse resp) {
 		Integer id = Integer.valueOf(req.getParameter("id"));
@@ -22,10 +24,10 @@ public class DeleteTariffHandler extends Handler {
 			rd.forward(req, resp);
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.log4j.Logger;
 
 import artemgvozdik.provider.bean.Admin;
 import artemgvozdik.provider.bean.Tariff;
@@ -18,6 +19,7 @@ import artemgvozdik.provider.dao.TariffDAO;
 import artemgvozdik.provider.dao.UserDAO;
 
 public class LoginUserHandler extends Handler {
+	static Logger logger = Logger.getLogger(LoginUserHandler.class);
 
 	public void doAction(HttpServletRequest req, HttpServletResponse resp) {
 		User user = null;
@@ -43,10 +45,10 @@ public class LoginUserHandler extends Handler {
 				rd.forward(req, resp);
 			} catch (ServletException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("Exception ", e);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("Exception ", e);
 			}
 		}
 		if (admin != null) {
@@ -58,10 +60,10 @@ public class LoginUserHandler extends Handler {
 				rd.forward(req, resp);
 			} catch (ServletException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("Exception ", e);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("Exception ", e);
 			}
 		}
 		if (admin == null && user == null) {
@@ -72,10 +74,10 @@ public class LoginUserHandler extends Handler {
 				rd.forward(req, resp);
 			} catch (ServletException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("Exception ", e);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("Exception ", e);
 			}
 		}
 	}

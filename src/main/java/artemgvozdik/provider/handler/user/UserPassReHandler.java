@@ -7,10 +7,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import artemgvozdik.provider.dao.UserDAO;
 import artemgvozdik.provider.handler.Handler;
 
 public class UserPassReHandler extends Handler {
+	static Logger logger = Logger.getLogger(UserPassReHandler.class);
 
 	@Override
 	public void doAction(HttpServletRequest req, HttpServletResponse resp) {
@@ -23,10 +26,10 @@ public class UserPassReHandler extends Handler {
 			rd.forward(req, resp);
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}

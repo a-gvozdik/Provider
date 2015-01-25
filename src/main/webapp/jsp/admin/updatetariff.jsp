@@ -18,13 +18,13 @@
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
 <c:out value="${info}"/>
-<br> <a href="http://localhost:8080/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
-<br><a href="<c:url value="${'http://localhost:8080/MainServlet/logout'}"></c:url>">Logout</a>
+<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+<br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div class="newuser">
 	<div class="newuserinner">
 <p align="center"> Update tariff </p>
-<form name="newuserform" method="post" action="http://localhost:8080/MainServlet/updateTariff">
+<form name="newuserform" method="post" action="/MainServlet/updateTariff">
 <p> ID* <input style="background-color:#EDEDED" type="text" readonly name="id" value="<c:out value="${tariff.ID}" />"> </p>
 <p> Name* <input type="text" name="name" value="<c:out value="${tariff.name}" />"> </p>
 <p> Description* <input type="text" name="description" value="<c:out value="${tariff.description}" />"> </p>

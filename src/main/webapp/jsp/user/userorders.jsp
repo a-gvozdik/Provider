@@ -15,8 +15,8 @@
 <c:out value="${user.first_name}" /> <c:out value="${user.last_name}" />
 <c:out value="${info}"/>
 <br> 
-<a href="http://localhost:8080/MainServlet/jsp/user/mainuser.jsp">User main</a>
-<br><a href="<c:url value="${'http://localhost:8080/MainServlet/logout'}"></c:url>">Logout</a>
+<a href="/MainServlet/jsp/user/mainuser.jsp">User main</a>
+<br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div>
 <p align="center"> <b> My orders </b> </p>

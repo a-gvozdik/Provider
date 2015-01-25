@@ -8,12 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.log4j.Logger;
 
 import artemgvozdik.provider.ConnectionFactory;
 import artemgvozdik.provider.bean.Admin;
 
 public class AdminDAO {
-
+	static Logger logger = Logger.getLogger(AdminDAO.class);
 	public List<Admin> getAll() {
 		List<Admin> adminlist = new ArrayList<Admin>();
 		try (Connection con = ConnectionFactory.getConnection()) {
@@ -32,7 +33,7 @@ public class AdminDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 		return adminlist;
 
@@ -56,7 +57,7 @@ public class AdminDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 		return admin;
 	}
@@ -72,7 +73,7 @@ public class AdminDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}
@@ -92,7 +93,7 @@ public class AdminDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}
@@ -105,7 +106,7 @@ public class AdminDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}
@@ -123,7 +124,7 @@ public class AdminDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}
@@ -148,7 +149,7 @@ public class AdminDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 		return admin;
 

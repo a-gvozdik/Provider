@@ -15,7 +15,7 @@
 <div class="divmain" >
 	<div class="divinner">
     <h3> Enter login and password</h3>
-<form method="post" action="http://localhost:8080/MainServlet/login">
+<form method="post" action="/MainServlet/login">
 <p>Login <input align="right" class="txt" type="text" name="login"> </p>
 <p>Password <input class="txt" type="password" name="password"> </p>
 <p align="center">

@@ -9,12 +9,15 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import artemgvozdik.provider.ConnectionFactory;
 import artemgvozdik.provider.bean.ActiveService;
 import artemgvozdik.provider.bean.Service;
 import artemgvozdik.provider.bean.User;
 
 public class ActiveServiceDAO {
+	static Logger logger = Logger.getLogger(ActiveServiceDAO.class);
 
 	public List<ActiveService> getAllActive() {
 		List<ActiveService> laservice = new ArrayList<ActiveService>();
@@ -37,7 +40,7 @@ public class ActiveServiceDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 		laservice.sort(new StatusSort());
 		return laservice;
@@ -57,7 +60,7 @@ public class ActiveServiceDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 	}
 
@@ -69,7 +72,7 @@ public class ActiveServiceDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 	}
 

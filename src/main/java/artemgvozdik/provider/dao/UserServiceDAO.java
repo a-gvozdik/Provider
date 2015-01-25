@@ -7,10 +7,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import artemgvozdik.provider.ConnectionFactory;
 import artemgvozdik.provider.bean.Service;
 
 public class UserServiceDAO {
+	static Logger logger = Logger.getLogger(UserServiceDAO.class);
 
 	public void makeUserOrder(int userid, int serviceid) {
 
@@ -22,7 +25,7 @@ public class UserServiceDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}
@@ -30,7 +33,8 @@ public class UserServiceDAO {
 	public List<Service> selectByUser(int userid) {
 		List<Service> uslist = new ArrayList<Service>();
 		try (Connection con = ConnectionFactory.getConnection()) {
-			PreparedStatement st = con.prepareStatement("SELECT * FROM service, user_service WHERE user_service.ID_user = ? and user_service.ID_service=service.ID");
+			PreparedStatement st = con
+					.prepareStatement("SELECT * FROM service, user_service WHERE user_service.ID_user = ? and user_service.ID_service=service.ID");
 			st.setInt(1, userid);
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
@@ -44,7 +48,7 @@ public class UserServiceDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 		return uslist;
 

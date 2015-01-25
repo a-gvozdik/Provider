@@ -14,12 +14,12 @@
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
 <c:out value="${info}"/>
-<br> <a href="http://localhost:8080/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
-<br><a href="<c:url value="${'http://localhost:8080/MainServlet/logout'}"></c:url>">Logout</a>
+<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+<br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div>
-<p align="left"> <a href="http://localhost:8080/MainServlet/jsp/admin/addTariff.jsp">Add new tariff</a>
-<p align="center"> <a href="http://localhost:8080/MainServlet/alltariffs"><b> All tariffs list </b></a> </p>
+<p align="left"> <a href="/MainServlet/jsp/admin/addTariff.jsp">Add new tariff</a>
+<p align="center"> <a href="/MainServlet/alltariffs"><b> All tariffs list </b></a> </p>
  <table>
         <thead>
             <tr>
@@ -37,8 +37,8 @@
                     <td><c:out value="${tar.name}" /></td>
                     <td><c:out value="${tar.description}" /></td>
                     <td><c:out value="${tar.price}" /></td>
-                    <td><a href="http://localhost:8080/MainServlet/gettariff?id=<c:out value="${tar.ID}"/>">Update tariff</a></td>
-                    <td><a href="http://localhost:8080/MainServlet/deleteTariff?id=<c:out value="${tar.ID}"/>">Delete tariff</a></td>
+                    <td><a href="/MainServlet/gettariff?id=<c:out value="${tar.ID}"/>">Update tariff</a></td>
+                    <td><a href="/MainServlet/deleteTariff?id=<c:out value="${tar.ID}"/>">Delete tariff</a></td>
                                       
                 </tr>
             </c:forEach>

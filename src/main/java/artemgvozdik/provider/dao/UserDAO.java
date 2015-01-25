@@ -1,4 +1,5 @@
 package artemgvozdik.provider.dao;
+
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -9,11 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.log4j.Logger;
 
 import artemgvozdik.provider.ConnectionFactory;
 import artemgvozdik.provider.bean.User;
 
 public class UserDAO {
+	static Logger logger = Logger.getLogger(UserDAO.class);
 
 	public List<User> getAll() {
 		List<User> userlist = new ArrayList<User>();
@@ -39,7 +42,7 @@ public class UserDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 		return userlist;
 
@@ -69,7 +72,7 @@ public class UserDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 		return user;
 	}
@@ -79,7 +82,7 @@ public class UserDAO {
 			PreparedStatement st = con
 					.prepareStatement("insert into users (First_name, Last_name, address, balans, birthday, email, login, MAC, password, phone_number) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			String pass = user.getPassword();
-			String passmd5 = DigestUtils.md5Hex (pass); 
+			String passmd5 = DigestUtils.md5Hex(pass);
 			st.setString(1, user.getFirst_name());
 			st.setString(2, user.getLast_name());
 			st.setString(3, user.getAddress());
@@ -93,7 +96,7 @@ public class UserDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}
@@ -106,23 +109,23 @@ public class UserDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}
-	
+
 	public void passRenew(int id, String newpass) {
 		try (Connection con = ConnectionFactory.getConnection()) {
 			PreparedStatement st = con
 					.prepareStatement("update users set password=? WHERE id=?");
 			st.setInt(2, id);
 			String pass = newpass;
-			String passmd5 = DigestUtils.md5Hex (pass);
+			String passmd5 = DigestUtils.md5Hex(pass);
 			st.setString(1, passmd5);
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}
@@ -145,11 +148,11 @@ public class UserDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}
-	
+
 	public void changeTar(int id, int id_tariff) {
 		try (Connection con = ConnectionFactory.getConnection()) {
 			PreparedStatement st = con
@@ -159,7 +162,7 @@ public class UserDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}
@@ -186,7 +189,7 @@ public class UserDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 		return user;
 	}
@@ -214,7 +217,7 @@ public class UserDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 		return user;
 	}
@@ -244,7 +247,7 @@ public class UserDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 		return user;
 

@@ -13,14 +13,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
+
 import artemgvozdik.provider.bean.User;
 
 public class UserPagesFilter implements Filter {
+	static Logger logger = Logger.getLogger(UserPagesFilter.class);
 
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -31,28 +34,31 @@ public class UserPagesFilter implements Filter {
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
 		if (user == null || session == null) {
-			
-			RequestDispatcher rd = req
-					.getRequestDispatcher("/jsp/denied.jsp");
+
+			RequestDispatcher rd = req.getRequestDispatcher("/jsp/denied.jsp");
 			try {
 				rd.forward(req, resp);
 			} catch (ServletException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("Exception ", e);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("Exception ", e);
 			}
-		} 
-		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); //Preventing User to go back after logout in jsp with BackButton in browser
+		}
+		response.setHeader("Cache-Control",
+				"no-cache, no-store, must-revalidate"); // Preventing User to go
+														// back after logout in
+														// jsp with BackButton
+														// in browser
 		fc.doFilter(req, response);
-		
+
 	}
 
 	@Override
 	public void init(FilterConfig config) throws ServletException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

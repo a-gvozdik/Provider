@@ -8,10 +8,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import artemgvozdik.provider.ConnectionFactory;
 import artemgvozdik.provider.bean.Service;
 
 public class ServiceDAO {
+	static Logger logger = Logger.getLogger(ServiceDAO.class);
 	public List<Service> getAll() {
 		List<Service> servicelist = new ArrayList<Service>();
 		try (Connection con = ConnectionFactory.getConnection()) {
@@ -27,7 +30,7 @@ public class ServiceDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 		return servicelist;
 
@@ -48,7 +51,7 @@ public class ServiceDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 		return service;
 	}
@@ -63,7 +66,7 @@ public class ServiceDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}
@@ -75,7 +78,7 @@ public class ServiceDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}
@@ -91,7 +94,7 @@ public class ServiceDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}

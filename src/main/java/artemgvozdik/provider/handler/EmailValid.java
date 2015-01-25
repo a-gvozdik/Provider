@@ -8,32 +8,37 @@ import java.sql.ResultSet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import artemgvozdik.provider.ConnectionFactory;
 
 public class EmailValid extends Handler {
+	static Logger logger = Logger.getLogger(EmailValid.class);
 
 	@Override
 	public void doAction(HttpServletRequest req, HttpServletResponse resp) {
-		resp.setContentType("text/html;charset=UTF-8");  
-        try (Connection con = ConnectionFactory.getConnection(); PrintWriter out = resp.getWriter()) { 
-        	
-        	String email = req.getParameter("mail");
-        	PreparedStatement st = con
+		resp.setContentType("text/html;charset=UTF-8");
+		try (Connection con = ConnectionFactory.getConnection();
+				PrintWriter out = resp.getWriter()) {
+
+			String email = req.getParameter("mail");
+			PreparedStatement st = con
 					.prepareStatement("SELECT * FROM users WHERE email = ?");
 			st.setString(1, email);
-            ResultSet rs = st.executeQuery();  
-               
-            if (!rs.next()) {  
-                out.println("<font color=\"green\"><b>"+email+"</b> is avaliable</font>");  
-            }  
-            else{  
-            out.println("<font color=\"red\"><b>"+email+"</b> is already in use</font>");  
-            }  
-            out.println();  
-  
-        } catch (Exception ex) {  
-            ex.printStackTrace();  
-        } 
+			ResultSet rs = st.executeQuery();
+
+			if (!rs.next()) {
+				out.println("<font color=\"green\"><b>" + email
+						+ "</b> is avaliable</font>");
+			} else {
+				out.println("<font color=\"red\"><b>" + email
+						+ "</b> is already in use</font>");
+			}
+			out.println();
+
+		} catch (Exception e) {
+			logger.error("Exception ", e);
+		}
 
 	}
 

@@ -14,12 +14,12 @@
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
 <c:out value="${info}"/>
-<br> <a href="http://localhost:8080/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
-<br><a href="<c:url value="${'http://localhost:8080/MainServlet/logout'}"></c:url>">Logout</a>
+<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+<br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div>
-<p align="left"> <a href="http://localhost:8080/MainServlet/jsp/admin/addService.jsp">Add new service</a>
-<p align="center"> <a href="http://localhost:8080/MainServlet/allservice"><b> All service list </b></a> </p>
+<p align="left"> <a href="/MainServlet/jsp/admin/addService.jsp">Add new service</a>
+<p align="center"> <a href="/MainServlet/allservice"><b> All service list </b></a> </p>
  <table>
         <thead>
             <tr>
@@ -37,8 +37,8 @@
                     <td><c:out value="${serv.name}" /></td>
                     <td><c:out value="${serv.description}" /></td>
                     <td><c:out value="${serv.price}" /></td>
-                    <td><a href="http://localhost:8080/MainServlet/getservice?id=<c:out value="${serv.ID}"/>">Update service</a></td>
-                    <td><a href="http://localhost:8080/MainServlet/deleteService?id=<c:out value="${serv.ID}"/>">Delete service</a></td>
+                    <td><a href="/MainServlet/getservice?id=<c:out value="${serv.ID}"/>">Update service</a></td>
+                    <td><a href="/MainServlet/deleteService?id=<c:out value="${serv.ID}"/>">Delete service</a></td>
                                       
                 </tr>
             </c:forEach>

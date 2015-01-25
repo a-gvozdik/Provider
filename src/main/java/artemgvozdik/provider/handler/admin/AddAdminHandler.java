@@ -7,11 +7,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import artemgvozdik.provider.bean.Admin;
 import artemgvozdik.provider.dao.AdminDAO;
 import artemgvozdik.provider.handler.Handler;
 
 public class AddAdminHandler extends Handler {
+	static Logger logger = Logger.getLogger(AddAdminHandler.class);
 
 	@Override
 	public void doAction(HttpServletRequest req, HttpServletResponse resp) {
@@ -24,15 +27,16 @@ public class AddAdminHandler extends Handler {
 		admin.setPassword(req.getParameter("password"));
 		admin.setPhone(req.getParameter("phone"));
 		adao.createAdmin(admin);
-		RequestDispatcher rd = req.getRequestDispatcher("/jsp/admin/mainadmin.jsp");
+		RequestDispatcher rd = req
+				.getRequestDispatcher("/jsp/admin/mainadmin.jsp");
 		try {
 			rd.forward(req, resp);
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}

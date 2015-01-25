@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import artemgvozdik.provider.handler.EmailValid;
 import artemgvozdik.provider.handler.Handler;
 import artemgvozdik.provider.handler.LoginUserHandler;
@@ -48,11 +50,12 @@ import artemgvozdik.provider.handler.user.UpdateUserHandler;
 import artemgvozdik.provider.handler.user.UserPassReHandler;
 
 public class MainServlet extends HttpServlet {
-
+	static Logger logger = Logger.getLogger(MainServlet.class);
 	Map<String, Handler> urls;
 	private static final long serialVersionUID = 1L;
 
 	public void init() throws ServletException {
+		logger.info("init() method started");
 		super.init();
 		urls = new HashMap<String, Handler>();
 		urls.put("/MainServlet/addUser", new AddUserHandler());
@@ -91,6 +94,8 @@ public class MainServlet extends HttpServlet {
 		urls.put("/MainServlet/activeservice", new AllActiveServiceHandler());
 		urls.put("/MainServlet/changeServiceStatus", new ActiveServiceChangeStatusHandler());
 		urls.put("/MainServlet/deleteActiveService", new DeleteActiveServiceHandler());
+		
+		logger.info("init() method finished");
 		
 	}
 

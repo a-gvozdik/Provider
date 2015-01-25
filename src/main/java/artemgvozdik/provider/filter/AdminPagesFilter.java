@@ -13,9 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
+
 import artemgvozdik.provider.bean.Admin;
 
 public class AdminPagesFilter implements Filter {
+	static Logger logger = Logger.getLogger(AdminPagesFilter.class);
 
 	@Override
 	public void destroy() {
@@ -27,24 +30,27 @@ public class AdminPagesFilter implements Filter {
 			FilterChain fc) throws IOException, ServletException {
 
 		HttpServletRequest request = (HttpServletRequest) req;
-		HttpServletResponse response = (HttpServletResponse) resp; 
+		HttpServletResponse response = (HttpServletResponse) resp;
 		HttpSession session = request.getSession();
 		Admin admin = (Admin) session.getAttribute("admin");
 		if (admin == null || session == null) {
-			
-			RequestDispatcher rd = req
-					.getRequestDispatcher("/jsp/denied.jsp");
+
+			RequestDispatcher rd = req.getRequestDispatcher("/jsp/denied.jsp");
 			try {
 				rd.forward(req, resp);
 			} catch (ServletException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("Exception ", e);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("Exception ", e);
 			}
-		} 
-		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); //Preventing User to go back after logout in jsp with BackButton in browser
+		}
+		response.setHeader("Cache-Control",
+				"no-cache, no-store, must-revalidate"); // Preventing User to go
+														// back after logout in
+														// jsp with BackButton
+														// in browser
 		fc.doFilter(req, response);
 	}
 

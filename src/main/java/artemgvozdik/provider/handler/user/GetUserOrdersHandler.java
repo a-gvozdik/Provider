@@ -9,28 +9,32 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import artemgvozdik.provider.bean.Service;
 import artemgvozdik.provider.dao.UserServiceDAO;
 import artemgvozdik.provider.handler.Handler;
 
 public class GetUserOrdersHandler extends Handler {
+	static Logger logger = Logger.getLogger(GetUserOrdersHandler.class);
 
 	@Override
 	public void doAction(HttpServletRequest req, HttpServletResponse resp) {
-		List <Service> uslist = new ArrayList<Service>();
+		List<Service> uslist = new ArrayList<Service>();
 		int userid = Integer.parseInt(req.getParameter("userid"));
 		UserServiceDAO usdao = new UserServiceDAO();
 		uslist = usdao.selectByUser(userid);
 		req.setAttribute("uslist", uslist);
-	    RequestDispatcher rd = req.getRequestDispatcher("/jsp/user/userorders.jsp");
-	    try {
+		RequestDispatcher rd = req
+				.getRequestDispatcher("/jsp/user/userorders.jsp");
+		try {
 			rd.forward(req, resp);
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}

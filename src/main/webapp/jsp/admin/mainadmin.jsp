@@ -14,32 +14,32 @@
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
 <c:out value="${info}"/>
-<br> <a href="http://localhost:8080/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
-<br><a href="<c:url value="${'http://localhost:8080/MainServlet/logout'}"></c:url>">Logout</a>
+<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+<br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div class="userslinks">
 <p>Users</p>
-<p align="center"> <a href="http://localhost:8080/MainServlet/alluserlist">All users list</a> 
-<br> <a href="http://localhost:8080/MainServlet/jsp/admin/addUser.jsp">Add new user</a></p>
+<p align="center"> <a href="/MainServlet/alluserlist">All users list</a> 
+<br> <a href="/MainServlet/jsp/admin/addUser.jsp">Add new user</a></p>
 </div>
 <p></p>
 <div class="adminslinks">
 <p>Admins</p>
-<p align="center"> <a href="http://localhost:8080/MainServlet/alladmins">All admins</a>
-<br> <a href="http://localhost:8080/MainServlet/jsp/admin/addAdmin.jsp">Add admin</a></p>
+<p align="center"> <a href="/MainServlet/alladmins">All admins</a>
+<br> <a href="/MainServlet/jsp/admin/addAdmin.jsp">Add admin</a></p>
 </div>
 <p></p>
 <div class="adminslinks">
 <p>Tariffs</p>
-<p align="center"> <a href="http://localhost:8080/MainServlet/alltariffs">All tariffs</a>
-<br> <a href="http://localhost:8080/MainServlet/jsp/admin/addTariff.jsp">Add tariff</a></p>
+<p align="center"> <a href="/MainServlet/alltariffs">All tariffs</a>
+<br> <a href="/MainServlet/jsp/admin/addTariff.jsp">Add tariff</a></p>
 </div>
 <p></p>
 <div class="adminslinks">
 <p>Service</p>
-<p align="center"> <a href="http://localhost:8080/MainServlet/allservice">All service</a>
-<br> <a href="http://localhost:8080/MainServlet/jsp/admin/addService.jsp">Add service</a>
-<br> <a href="http://localhost:8080/MainServlet/activeservice">Active service list</a></p>
+<p align="center"> <a href="/MainServlet/allservice">All service</a>
+<br> <a href="/MainServlet/jsp/admin/addService.jsp">Add service</a>
+<br> <a href="/MainServlet/activeservice">Active service list</a></p>
 </div>
 </body>
 </html>

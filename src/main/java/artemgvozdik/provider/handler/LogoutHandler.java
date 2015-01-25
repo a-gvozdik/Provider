@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
+
 public class LogoutHandler extends Handler {
+	static Logger logger = Logger.getLogger(LogoutHandler.class);
 
 	@Override
 	public void doAction(HttpServletRequest req, HttpServletResponse resp) {
@@ -16,16 +19,15 @@ public class LogoutHandler extends Handler {
 		session.setAttribute("admin", null);
 		session.setAttribute("user", null);
 		session.invalidate();
-		RequestDispatcher rd = req
-				.getRequestDispatcher("/login.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("/login.jsp");
 		try {
 			rd.forward(req, resp);
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}

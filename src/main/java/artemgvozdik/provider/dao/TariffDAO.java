@@ -7,12 +7,14 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import artemgvozdik.provider.ConnectionFactory;
 import artemgvozdik.provider.bean.Tariff;
 
 
 public class TariffDAO {
-	
+	static Logger logger = Logger.getLogger(TariffDAO.class);
 	
 	public List<Tariff> getAll() {
 		List<Tariff> tarifflist = new ArrayList<Tariff>();
@@ -29,7 +31,7 @@ public class TariffDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 		return tarifflist;
 
@@ -50,7 +52,7 @@ public class TariffDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 		return tariff;
 	}
@@ -65,7 +67,7 @@ public class TariffDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}
@@ -77,7 +79,7 @@ public class TariffDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}
@@ -93,7 +95,7 @@ public class TariffDAO {
 			st.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Exception ", e);
 		}
 
 	}

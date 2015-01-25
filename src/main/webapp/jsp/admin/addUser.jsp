@@ -13,7 +13,7 @@
                   if(uname.length >= 3){
                       $.ajax({
                           type: "POST",
-                          url: "http://localhost:8080/MainServlet/checkLogin",
+                          url: "/MainServlet/checkLogin",
                           data: "uname="+ uname,
                           success: function(msg){
 
@@ -38,7 +38,7 @@
                   if(mail.length > 0){
                       $.ajax({
                           type: "POST",
-                          url: "http://localhost:8080/MainServlet/checkMail",
+                          url: "/MainServlet/checkMail",
                           data: "mail="+ mail,
                           success: function(msg){
 
@@ -69,13 +69,13 @@
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
 <c:out value="${info}"/>
-<br> <a href="http://localhost:8080/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
-<br><a href="<c:url value="${'http://localhost:8080/MainServlet/logout'}"></c:url>">Logout</a>
+<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+<br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div class="newuser">
 	<div class="newuserinner">
 <p align="center"> Add new User </p>
-<form name="newuserform" method="post" action="http://localhost:8080/MainServlet/addUser">
+<form name="newuserform" method="post" action="/MainServlet/addUser">
 <p> First Name* <input type="text" name="firstname"> </p>
 <p> Last Name* <input type="text" name="lastname"> </p>
 <p> Login* <input type="text" name="login" class="uname"> <br><span style="font-size: 10px;" class="status"></span></p>

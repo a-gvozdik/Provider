@@ -52,13 +52,13 @@ document.updatepass.submit.disabled=true;
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
 <c:out value="${info}"/>
-<br> <a href="http://localhost:8080/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
-<br><a href="<c:url value="${'http://localhost:8080/MainServlet/logout'}"></c:url>">Logout</a>
+<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+<br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div class="newuser">
 	<div class="newuserinner">
 <p align="center"> Update admin password</p>
-<form name="updatepass" method="post" action="http://localhost:8080/MainServlet/updateAdminPass">
+<form name="updatepass" method="post" action="/MainServlet/updateAdminPass">
 <p> ID* <input style="background-color:#EDEDED" type="text" readonly name="id" value="<c:out value="${id}" />"> </p>
 <p> New Password* <input type="password" name="newpass" onBlur="ValRe()"><br><span id="sp1" style="font-size: 10px;">min 5 chars</span> </p>
 <p> Confirm* <input type="password" name="newpass2" onKeyUp="MaRe()"><br><span style="font-size: 10px;" id="sp2" class="passvalid"></span> </p>

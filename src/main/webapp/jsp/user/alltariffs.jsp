@@ -15,12 +15,12 @@
 <c:out value="${user.first_name}" /> <c:out value="${user.last_name}" />
 <c:out value="${info}"/>
 <br> 
-<a href="http://localhost:8080/MainServlet/jsp/user/mainuser.jsp">User main</a>
-<br><a href="<c:url value="${'http://localhost:8080/MainServlet/logout'}"></c:url>">Logout</a>
+<a href="/MainServlet/jsp/user/mainuser.jsp">User main</a>
+<br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div>
-<p align="center"> <a href="http://localhost:8080/MainServlet/alltar"><b> All tariffs list </b></a> </p>
-<form name="newuserform" method="post" action="http://localhost:8080/MainServlet/changeUserTar">
+<p align="center"> <a href="/MainServlet/alltar"><b> All tariffs list </b></a> </p>
+<form name="newuserform" method="post" action="/MainServlet/changeUserTar">
  <table>
         <thead>
             <tr>
