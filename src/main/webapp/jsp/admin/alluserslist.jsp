@@ -13,17 +13,17 @@
 <body>
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
-<c:out value="${info}"/>
-<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+
+<br> <a href="/ProviderServlet/jsp/admin/mainadmin.jsp">Admin main</a>
 <br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div>
-<p align="left"> <a href="/MainServlet/jsp/admin/addUser.jsp">Add new user</a>
-<p align="center"> <a href="/MainServlet/alluserlist"><b> All users list </b></a> </p>
+<p align="left"><button class="button" onClick="document.location.href='/ProviderServlet/jsp/admin/addUser.jsp'">Add new user</button>
+<p align="center"> <a href="/ProviderServlet/alluserlist">All users list </a> </p>
  <table>
         <thead>
             <tr>
-                <th>User Id</th>
+                <th>Id</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Login</th>
@@ -34,6 +34,7 @@
                 <th>Balans</th>
                 <th>Address</th>
                 <th>Status</th>
+                <th>Tariff</th>
                 <th colspan=3>Action</th>
                 </tr>
         </thead>
@@ -51,9 +52,10 @@
                     <td><c:out value="${user.balans}" /></td>
                     <td><c:out value="${user.address}" /></td>
                     <td><c:out value="${user.status}" /></td>
-                    <td><a href="/MainServlet/getuser?id=<c:out value="${user.id}"/>">Update user</a></td>
-                    <td><a href="/MainServlet/deleteUser?id=<c:out value="${user.id}"/>">Delete user</a></td>
-                    <td><a href="/MainServlet/getuserpass?id=<c:out value="${user.id}"/>">Pass renew</a></td>
+                    <td><c:out value="${user.tariff.name}" /></td>
+                    <td><button class="button" onClick="document.location.href='/ProviderServlet/getuser?id=<c:out value="${user.id}"/>'">Update</button></td>
+                    <td><button class="button" onClick="document.location.href='/ProviderServlet/deleteUser?id=<c:out value="${user.id}"/>'">Delete</button></td>
+                    <td><button class="button" onClick="document.location.href='/ProviderServlet/getuserpass?id=<c:out value="${user.id}"/>'">Change pass</button></td>
                    
                 </tr>
             </c:forEach>

@@ -51,18 +51,18 @@ document.updatepass.submit.disabled=true;
 <body>
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
-<c:out value="${info}"/>
-<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+
+<br> <a href="/ProviderServlet/jsp/admin/mainadmin.jsp">Admin main</a>
 <br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div class="newuser">
 	<div class="newuserinner">
 <p align="center"> Update admin password</p>
-<form name="updatepass" method="post" action="/MainServlet/updateAdminPass">
-<p> ID* <input style="background-color:#EDEDED" type="text" readonly name="id" value="<c:out value="${id}" />"> </p>
-<p> New Password* <input type="password" name="newpass" onBlur="ValRe()"><br><span id="sp1" style="font-size: 10px;">min 5 chars</span> </p>
-<p> Confirm* <input type="password" name="newpass2" onKeyUp="MaRe()"><br><span style="font-size: 10px;" id="sp2" class="passvalid"></span> </p>
-<p> <input class="button" name="submit" type="submit" value="Renew" disabled> <input type="button" onclick="history.back();" value="Back"/> </p>
+<form name="updatepass" method="post" action="/ProviderServlet/updateAdminPass">
+<p> ID* <input class="simple-input" style="background-color:#EDEDED" type="text" readonly name="id" value="<c:out value="${id}" />"> </p>
+<p> New Password* <input class="simple-input" type="password" name="newpass" onBlur="ValRe()"><br><span id="sp1" style="font-size: 10px;">min 5 chars</span> </p>
+<p> Confirm* <input class="simple-input" type="password" name="newpass2" onKeyUp="MaRe()"><br><span style="font-size: 10px;" id="sp2" class="passvalid"></span> </p>
+<p> <input class="button" name="submit" type="submit" value="Renew" disabled> <input type="button" class="button" onclick="history.back();" value="Back"/> </p>
 </form>
 	</div>
 </div>

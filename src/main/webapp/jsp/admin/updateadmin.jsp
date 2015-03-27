@@ -13,21 +13,21 @@
 <body>
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
-<c:out value="${info}"/>
-<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+
+<br> <a href="/ProviderServlet/jsp/admin/mainadmin.jsp">Admin main</a>
 <br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div class="newuser">
 	<div class="newuserinner">
 <p align="center"> Update admin <c:out value="${uadmin.first_name}" /> <c:out value="${uadmin.last_name}"/> </p>
-<form name="update" method="post" action="/MainServlet/updateAdmin">
-<p> ID* <input style="background-color:#EDEDED" type="text" readonly name="id" value="<c:out value="${uadmin.id}" />"> </p>
-<p> First Name* <input type="text" name="firstname" value="<c:out value="${uadmin.first_name}" />"> </p>
-<p> Last Name* <input type="text" name="lastname" value="<c:out value="${uadmin.last_name}" />"> </p>
-<p> Login* <input type="text" name="login" value="<c:out value="${uadmin.login}" />" > </p>
-<p> Email* <input type="text" name="email" value="<c:out value="${uadmin.email}" />"> </p>
-<p> Phone* <input type="text" name="phone" value="<c:out value="${uadmin.phone}" />"> </p>
-<p> <input class="button" name="submit" type="submit" value="Update"> <input type="button" onclick="history.back();" value="Back"/> </p>
+<form name="update" method="post" action="/ProviderServlet/updateAdmin">
+<p> ID* <input class="simple-input" style="background-color:#EDEDED" type="text" readonly name="id" value="<c:out value="${uadmin.id}" />"> </p>
+<p> First Name* <input class="simple-input" type="text" name="firstname" value="<c:out value="${uadmin.first_name}" />"> </p>
+<p> Last Name* <input class="simple-input" type="text" name="lastname" value="<c:out value="${uadmin.last_name}" />"> </p>
+<p> Login* <input class="simple-input" type="text" name="login" value="<c:out value="${uadmin.login}" />" > </p>
+<p> Email* <input class="simple-input" type="text" name="email" value="<c:out value="${uadmin.email}" />"> </p>
+<p> Phone* <input class="simple-input" type="text" name="phone" value="<c:out value="${uadmin.phone}" />"> </p>
+<p> <input class="button" name="submit" type="submit" value="Update"> <input type="button" class="button" onclick="history.back();" value="Back"/> </p>
 </form>
 	</div>
 </div>

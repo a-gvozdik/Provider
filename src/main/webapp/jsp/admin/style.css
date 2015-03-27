@@ -61,11 +61,32 @@ font-family: "Segoe UI";
 	text-align:center;
 	vertical-align:middle;
 }
-
 .button {
-	width:70px;
-	margin-left:10px;
-	margin-right:10px;
+  display: inline-block;
+  font-family: Segoe UI;
+  font-size: 11px;
+  font-weight: bold;
+  color: rgb(68,68,68);
+  text-decoration: none;
+  user-select: none;
+  padding: .2em 1.2em;
+  outline: none;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 2px;
+  background: rgb(245,245,245) linear-gradient(#f4f4f4, #f1f1f1);
+  transition: all .218s ease 0s;
+}
+.button:hover {
+	color: rgb(24,24,24);
+  border: 1px solid rgb(198,198,198);
+  background: #f7f7f7 linear-gradient(#f7f7f7, #f1f1f1);
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+.button:active {
+	 color: rgb(51,51,51);
+  border: 1px solid rgb(204,204,204);
+  background: rgb(238,238,238) linear-gradient(rgb(238,238,238), rgb(224,224,224));
+  box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
 }
 
 .newuser {
@@ -88,10 +109,50 @@ TABLE {
 	border-collapse: collapse;
 	border: 1px;
 }
-TH, TD {
-    border: 1px solid #70ACFF; /* Параметры рамки */
-    padding: 4px; /* Поля вокруг текста */
+TH  {
+    border: 1px solid #4B96FF; /* Parametru ramki */
+    padding: 2px; /* Polya vokrug teksta */
+	background:#E1EDFF;
    }
-   
+ TD {
+    border: 1px solid #4B96FF; /* Parametru ramki */
+    padding: 2px; /* Polya vokrug teksta */
+   }
+.simple-input, .mail, .uname {
+  border: 2px solid #A9CDEB;
+  border-radius: 5px;
+  color: #333;
+  transition: all 0.3s ease-out;
+}
+.simple-input:hover { border-radius: 8px; }
+.mail:hover { border-radius: 8px; }
+.uname:hover { border-radius: 8px; }
+.simple-input:focus { 
+  outline: none;
+  border-radius: 8px; 
+  border-color: #EBD292;
+}
+.mail:focus { 
+  outline: none;
+  border-radius: 8px; 
+  border-color: #EBD292;
+}
+.uname:focus { 
+  outline: none;
+  border-radius: 8px; 
+  border-color: #EBD292;
+}
+a {
+  display: inline-block;
+  border-bottom: 1px dashed rgba(0,0,0,0.4);
+
+  /* Font styles */
+  text-decoration: none;
+  color: #2B65EC;
+}
+
+a:hover   { border-bottom-style: dotted; }
+a:active  { border-bottom-style: solid; }
+a:visited { border-bottom: 1px solid #104E7E; }
 
 

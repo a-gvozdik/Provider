@@ -13,17 +13,17 @@
 <body>
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
-<c:out value="${info}"/>
-<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+
+<br> <a href="/ProviderServlet/jsp/admin/mainadmin.jsp">Admin main</a>
 <br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div>
-<p align="left"> <a href="/MainServlet/jsp/admin/addAdmin.jsp">Add new admin</a>
-<p align="center"> <a href="/MainServlet/alladmins"><b> All admins list </b></a> </p>
+<p align="left"> <button class="button" onClick="document.location.href='/ProviderServlet/jsp/admin/addAdmin.jsp'">Add new admin</button>
+<p align="center"> <a href="/ProviderServlet/alladmins"> All admins list </a> </p>
  <table>
         <thead>
             <tr>
-                <th>Admin Id</th>
+                <th>Id</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Login</th>
@@ -41,9 +41,9 @@
                     <td><c:out value="${tadmin.login}" /></td>
                     <td><c:out value="${tadmin.email}" /></td>
                     <td><c:out value="${tadmin.phone}" /></td>
-                    <td><a href="/MainServlet/getadmin?id=<c:out value="${tadmin.id}"/>">Update admin</a></td>
-                    <td><a href="/MainServlet/deleteAdmin?id=<c:out value="${tadmin.id}"/>">Delete admin</a></td>
-                    <td><a href="/MainServlet/getadminpass?id=<c:out value="${tadmin.id}"/>">Pass renew</a></td>
+                    <td><button class="button" onClick="document.location.href='/ProviderServlet/getadmin?id=<c:out value="${tadmin.id}"/>'">Update</button></td>
+                    <td><button class="button" onClick="document.location.href='/ProviderServlet/deleteAdmin?id=<c:out value="${tadmin.id}"/>'">Delete</button></td>
+                    <td><button class="button" onClick="document.location.href='/ProviderServlet/getadminpass?id=<c:out value="${tadmin.id}"/>'">Change pass</button></td>
                    
                 </tr>
             </c:forEach>

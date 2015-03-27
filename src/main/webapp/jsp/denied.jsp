@@ -13,6 +13,6 @@
 <body>
 <div>
 <h1 align="center"> Access denied </h1>
-<p align="center"> <a href="/MainServlet/login.jsp">Login</a> </p>
+<p align="center"> <a href="/ProviderServlet/login.jsp">Login</a> </p>
 </body>
 </html>

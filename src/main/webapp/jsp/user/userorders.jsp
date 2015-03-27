@@ -13,13 +13,13 @@
 <body>
 <div class="userinfo">
 <c:out value="${user.first_name}" /> <c:out value="${user.last_name}" />
-<c:out value="${info}"/>
+
 <br> 
-<a href="/MainServlet/jsp/user/mainuser.jsp">User main</a>
+<a href="/ProviderServlet/jsp/user/mainuser.jsp">User main</a>
 <br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div>
-<p align="center"> <b> My orders </b> </p>
+<p align="center"> <a href="/ProviderServlet/userorders?userid=<c:out value="${user.id}" />">My orders</a> </p>
  <table id="tab">
         <thead>
             <tr>
@@ -33,14 +33,15 @@
         <tbody>
             <c:forEach items="${uslist}" var="userv">
                 <tr>
-                    <td><c:out value="${userv.name}" /></td>
-                    <td><c:out value="${userv.description}" /></td>
-                    <td><c:out value="${userv.price}" /></td>
-                    <td class="sprice"><c:out value="${userv.orderstatus}" /></td>
+                    <td><c:out value="${userv.service.name}" /></td>
+                    <td><c:out value="${userv.service.description}" /></td>
+                    <td><c:out value="${userv.service.price}" /></td>
+                    <td class="sprice"><c:out value="${userv.status}" /></td>
                  </tr>
             </c:forEach>
            </tbody>
     </table>
+    
  </div>
 </body>
 </html>

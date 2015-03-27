@@ -1,14 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>ArtemGvozdik</groupId>
-  <version>1.0</version>
+  <artifactId>Provider_h</artifactId>
   <packaging>war</packaging>
+  <version>1</version>
   <build>
-  <finalName>MainServlet</finalName>
+  <finalName>ProviderServlet</finalName>
   </build>
-  
   <dependencies>
-  		<dependency>
+    <dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
@@ -62,6 +63,11 @@
 		        </exclusion>
 		    </exclusions>
 		</dependency>
-	</dependencies>
-  <artifactId>MainServlet</artifactId>
+		<dependency>
+				    <groupId>org.hibernate</groupId>
+				    <artifactId>hibernate-core</artifactId>
+				    <version>4.3.8.Final</version>
+				</dependency>
+  </dependencies>
+  
 </project>

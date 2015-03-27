@@ -17,19 +17,19 @@
 <body>
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
-<c:out value="${info}"/>
-<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+
+<br> <a href="/ProviderServlet/jsp/admin/mainadmin.jsp">Admin main</a>
 <br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div class="newuser">
 	<div class="newuserinner">
 <p align="center"> Update tariff </p>
-<form name="newuserform" method="post" action="/MainServlet/updateTariff">
-<p> ID* <input style="background-color:#EDEDED" type="text" readonly name="id" value="<c:out value="${tariff.ID}" />"> </p>
-<p> Name* <input type="text" name="name" value="<c:out value="${tariff.name}" />"> </p>
-<p> Description* <input type="text" name="description" value="<c:out value="${tariff.description}" />"> </p>
-<p> Price* <input type="text" name="price" value="<c:out value="${tariff.price}" />"></p>
-<p> <input class="button" name="submit" type="submit" value="Update"> <input type="button" onclick="history.back();" value="Back"/> </p>
+<form name="newuserform" method="post" action="/ProviderServlet/updateTariff">
+<p> ID* <input class="simple-input" style="background-color:#EDEDED" type="text" readonly name="id" value="<c:out value="${tariff.ID}" />"> </p>
+<p> Name* <input class="simple-input" type="text" name="name" value="<c:out value="${tariff.name}" />"> </p>
+<p> Description* <input class="simple-input" type="text" name="description" value="<c:out value="${tariff.description}" />"> </p>
+<p> Price* <input class="simple-input" type="text" name="price" value="<c:out value="${tariff.price}" />"></p>
+<p> <input class="button" name="submit" type="submit" value="Update"> <input type="button" class="button" onclick="history.back();" value="Back"/> </p>
 </form>
 	</div>
 </div>

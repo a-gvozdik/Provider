@@ -17,17 +17,17 @@
 <body>
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
-<c:out value="${info}"/>
-<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+
+<br> <a href="/ProviderServlet/jsp/admin/mainadmin.jsp">Admin main</a>
 <br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div class="newuser">
 	<div class="newuserinner">
 <p align="center"> Add new service </p>
-<form name="newuserform" method="post" action="/MainServlet/addService">
-<p> Name* <input type="text" name="name"> </p>
-<p> Description* <input type="text" name="description"> </p>
-<p> Price* <input type="text" name="price"></p>
+<form name="newuserform" method="post" action="/ProviderServlet/addService">
+<p> Name* <input class="simple-input" type="text" name="name"> </p>
+<p> Description* <input class="simple-input" type="text" name="description"> </p>
+<p> Price* <input class="simple-input" type="text" name="price"></p>
 <p> <input class="button" name="submit" type="submit" value="Add"> <input class="button" type="reset" value="Reset"> </p>
 </form>
 	</div>

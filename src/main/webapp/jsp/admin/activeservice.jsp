@@ -13,16 +13,16 @@
 <body>
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
-<c:out value="${info}"/>
-<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+
+<br> <a href="/ProviderServlet/jsp/admin/mainadmin.jsp">Admin main</a>
 <br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div>
-<p align="center"> <a href="/MainServlet/activeservice"><b> Active service list </b></a> </p>
+<p align="center"> <a href="/ProviderServlet/activeservice"><b> Active service list </b></a> </p>
  <table>
         <thead>
             <tr>
-                <th>Order Id</th>
+                <th>Id</th>
                 <th>Status</th>
                 <th>User ID</th>
                 <th>User Firstname</th>
@@ -46,8 +46,8 @@
                     <td><c:out value="${aservice.service.description}" /></td>
                     <td><c:out value="${aservice.service.ID}" /></td>
                     <td><c:out value="${aservice.service.price}" /></td>
-                    <td><a href="/MainServlet/changeServiceStatus?ID_order=<c:out value="${aservice.ID_order}"/>&status=<c:out value="${aservice.status}"/>">Change status</a></td>
-                    <td><a href="/MainServlet/deleteActiveService?ID_order=<c:out value="${aservice.ID_order}"/>">Delete order</a></td>
+                    <td><button class="button" onClick="document.location.href='/ProviderServlet/changeServiceStatus?ID_order=<c:out value="${aservice.ID_order}"/>&status=<c:out value="${aservice.status}"/>'">Change status</button></td>
+                    <td><button class="button" onClick="document.location.href='/ProviderServlet/deleteActiveService?ID_order=<c:out value="${aservice.ID_order}"/>'">Delete</button></td>
                     
                                       
                 </tr>

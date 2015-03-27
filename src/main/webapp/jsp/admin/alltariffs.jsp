@@ -13,17 +13,17 @@
 <body>
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
-<c:out value="${info}"/>
-<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+
+<br> <a href="/ProviderServlet/jsp/admin/mainadmin.jsp">Admin main</a>
 <br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div>
-<p align="left"> <a href="/MainServlet/jsp/admin/addTariff.jsp">Add new tariff</a>
-<p align="center"> <a href="/MainServlet/alltariffs"><b> All tariffs list </b></a> </p>
+<p align="left"><button class="button" onClick="document.location.href='/ProviderServlet/jsp/admin/addTariff.jsp'">Add new tariff</button>
+<p align="center"> <a href="/ProviderServlet/alltariffs">All tariffs list </a> </p>
  <table>
         <thead>
             <tr>
-                <th>Tariff Id</th>
+                <th>Id</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Price</th>
@@ -37,8 +37,8 @@
                     <td><c:out value="${tar.name}" /></td>
                     <td><c:out value="${tar.description}" /></td>
                     <td><c:out value="${tar.price}" /></td>
-                    <td><a href="/MainServlet/gettariff?id=<c:out value="${tar.ID}"/>">Update tariff</a></td>
-                    <td><a href="/MainServlet/deleteTariff?id=<c:out value="${tar.ID}"/>">Delete tariff</a></td>
+                    <td><button class="button" onClick="document.location.href='/ProviderServlet/gettariff?id=<c:out value="${tar.ID}"/>'">Update</button></td>
+                    <td><button class="button" onClick="document.location.href='/ProviderServlet/deleteTariff?id=<c:out value="${tar.ID}"/>'">Delete</button></td>
                                       
                 </tr>
             </c:forEach>

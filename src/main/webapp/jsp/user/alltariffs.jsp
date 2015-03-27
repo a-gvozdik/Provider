@@ -13,14 +13,14 @@
 <body>
 <div class="userinfo">
 <c:out value="${user.first_name}" /> <c:out value="${user.last_name}" />
-<c:out value="${info}"/>
+
 <br> 
-<a href="/MainServlet/jsp/user/mainuser.jsp">User main</a>
+<a href="/ProviderServlet/jsp/user/mainuser.jsp">User main</a>
 <br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div>
-<p align="center"> <a href="/MainServlet/alltar"><b> All tariffs list </b></a> </p>
-<form name="newuserform" method="post" action="/MainServlet/changeUserTar">
+<p align="center"> <a href="/ProviderServlet/alltar"> All tariffs list </a> </p>
+<form name="newuserform" method="post" action="/ProviderServlet/changeUserTar">
  <table>
         <thead>
             <tr>
@@ -38,13 +38,13 @@
                     <td><c:out value="${tar.name}" /></td>
                     <td><c:out value="${tar.description}" /></td>
                     <td><c:out value="${tar.price}" /></td>
-                    <td><input type="radio" name="tarchange" value="<c:out value="${tar.ID}"/>" ${user.id_tariff == tar.ID ?'checked':''}> <c:out value="${tar.name}" /></td>
+                    <td><input type="radio" name="tarchange" value="<c:out value="${tar.ID}"/>" ${user.tariff.ID == tar.ID ?'checked':''}> <c:out value="${tar.name}" /></td>
                                                      
                 </tr>
             </c:forEach>
         </tbody>
     </table>
-    <p align="center"> <input class="button" name="submit" type="submit" value="Change"> <input type="button" onclick="history.back();" value="Back"/> </p>
+    <p align="center"> <input class="button" name="submit" type="submit" value="Change"> <input type="button" class="button" onclick="history.back();" value="Back"/> </p>
     <input type="hidden" name="userid" value="<c:out value="${user.id}" />">
 </form>
 </div>

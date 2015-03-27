@@ -13,7 +13,7 @@
                   if(uname.length >= 3){
                       $.ajax({
                           type: "POST",
-                          url: "/MainServlet/checkLogin",
+                          url: "/ProviderServlet/checkLogin",
                           data: "uname="+ uname,
                           success: function(msg){
 
@@ -38,7 +38,7 @@
                   if(mail.length > 0){
                       $.ajax({
                           type: "POST",
-                          url: "/MainServlet/checkMail",
+                          url: "/ProviderServlet/checkMail",
                           data: "mail="+ mail,
                           success: function(msg){
 
@@ -68,25 +68,25 @@
 <body>
 <div class="admininfo">
 <c:out value="${admin.first_name}" /> <c:out value="${admin.last_name}" />
-<c:out value="${info}"/>
-<br> <a href="/MainServlet/jsp/admin/mainadmin.jsp">Admin main</a>
+
+<br> <a href="/ProviderServlet/jsp/admin/mainadmin.jsp">Admin main</a>
 <br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
 <div class="newuser">
 	<div class="newuserinner">
 <p align="center"> Add new User </p>
-<form name="newuserform" method="post" action="/MainServlet/addUser">
-<p> First Name* <input type="text" name="firstname"> </p>
-<p> Last Name* <input type="text" name="lastname"> </p>
+<form name="newuserform" method="post" action="/ProviderServlet/addUser">
+<p> First Name* <input class="simple-input" type="text" name="firstname"> </p>
+<p> Last Name* <input class="simple-input" type="text" name="lastname"> </p>
 <p> Login* <input type="text" name="login" class="uname"> <br><span style="font-size: 10px;" class="status"></span></p>
-<p> Password* <input type="password" name="password" onBlur="passValid()"> <br><span id="span1" style="font-size: 10px;">min 5 chars</span> </p>
-<p> Confirm pass* <input type="password" name="password2" onBlur="passMatch()"> <br><span style="font-size: 10px;" id="span2" class="passvalid"></span> </p>
-<p> Email* <input type="text" name="email" onBlur="validateEmail()" class="mail"> <br><span span style="font-size: 10px;" class="status2"></span><br><span style="font-size: 10px;" id="span3"></span></p>
-<p> MAC* <input type="text" name="MAC"> </p>
-<p> Birthday* <input type="text" name="birthday" onBlur="isValidDate()"><br> <span style="font-size: 10px;">2000-01-01</span> </p>
-<p> Phone* <input type="text" name="phone"> </p>
-<p> Balans <input type="text" name="balans"> </p>
-<p> Address <input type="text" name="address"> </p>
+<p> Password* <input class="simple-input" type="password" name="password" onBlur="passValid()"> <br><span id="span1" style="font-size: 10px;">min 5 chars</span> </p>
+<p> Confirm pass* <input class="simple-input" type="password" name="password2" onBlur="passMatch()"> <br><span style="font-size: 10px;" id="span2" class="passvalid"></span> </p>
+<p> Email* <input type="text" name="email" onBlur="validateEmail()" class="mail"> <br><span style="font-size: 10px;" class="status2"></span><br><span style="font-size: 10px;" id="span3"></span></p>
+<p> MAC* <input class="simple-input" type="text" name="MAC"> </p>
+<p> Birthday* <input class="simple-input" type="text" name="birthday" onBlur="isValidDate()"><br> <span style="font-size: 10px;">2000-01-01</span> </p>
+<p> Phone* <input class="simple-input" type="text" name="phone"> </p>
+<p> Balans <input class="simple-input" type="text" name="balans" value="0.0"> </p>
+<p> Address <input class="simple-input" type="text" name="address"> </p>
 <p> <input class="button" name="submit" type="submit" value="Add User" disabled> <input class="button" type="reset" value="Reset"> </p>
 </form>
 	</div>

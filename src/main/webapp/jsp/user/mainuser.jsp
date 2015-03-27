@@ -13,20 +13,20 @@
 <body>
 <div class="userinfo">
 <c:out value="${user.first_name}" /> <c:out value="${user.last_name}" />
-<c:out value="${info}"/>
+
 <br> 
-<a href="/MainServlet/jsp/user/mainuser.jsp">User main</a>
+<a href="/ProviderServlet/jsp/user/mainuser.jsp">User main</a>
 <br><a href="<c:url value="${'/logout'}"></c:url>">Logout</a>
 </div>
-<p align="center">Current tariff: <c:out value="${tariff.name}" />. Price: <c:out value="${tariff.price}" /> </p>
+<p align="center">Current tariff: <c:out value="${user.tariff.name}" />. Price: <c:out value="${user.tariff.price}" /> </p>
 <div class="usertable">
 <p>Tariffs</p>
-<p align="center"> <a href="/MainServlet/alltar">All tariffs</a> </p>
+<p align="center"> <a href="/ProviderServlet/alltar">All tariffs</a> </p>
 </div>
 <div class="usertable">
 <p>Services</p>
-<p align="center"> <a href="/MainServlet/allserv">All services</a>
-<br><a href="/MainServlet/userorders?userid=<c:out value="${user.id}" />">My orders</a> </p>
+<p align="center"> <a href="/ProviderServlet/allserv">All services</a>
+<br><a href="/ProviderServlet/userorders?userid=<c:out value="${user.id}" />">My orders</a> </p>
 </div>
 </body>
 </html>
