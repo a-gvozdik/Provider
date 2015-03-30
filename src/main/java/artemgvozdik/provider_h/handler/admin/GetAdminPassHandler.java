@@ -11,7 +11,7 @@ import org.apache.log4j.Logger;
 
 import artemgvozdik.provider_h.handler.Handler;
 
-public class GetAdminPassHandler extends Handler {
+public class GetAdminPassHandler implements Handler {
 	static Logger logger = Logger.getLogger(GetAdminPassHandler.class);
 
 	@Override

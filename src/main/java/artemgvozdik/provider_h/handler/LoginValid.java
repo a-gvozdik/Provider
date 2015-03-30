@@ -15,7 +15,7 @@ import org.hibernate.criterion.Restrictions;
 import artemgvozdik.provider_h.ConnectionFactory;
 import artemgvozdik.provider_h.bean.User;
 
-public class LoginValid extends Handler {
+public class LoginValid implements Handler {
 	static Logger logger = Logger.getLogger(LoginValid.class);
 
 	@SuppressWarnings("unchecked")

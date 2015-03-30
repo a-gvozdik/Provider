@@ -15,7 +15,7 @@ import artemgvozdik.provider_h.bean.Admin;
 import artemgvozdik.provider_h.dao.AdminDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class AllAdminsHandler extends Handler {
+public class AllAdminsHandler implements Handler {
 	static Logger logger = Logger.getLogger(AllAdminsHandler.class);
 
 	@Override

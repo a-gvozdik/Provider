@@ -16,7 +16,7 @@ import artemgvozdik.provider_h.bean.User;
 import artemgvozdik.provider_h.dao.UserDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class UpdateUserHandler extends Handler {
+public class UpdateUserHandler implements Handler {
 	static Logger logger = Logger.getLogger(UpdateUserHandler.class);
 
 	@Override

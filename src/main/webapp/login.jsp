@@ -14,13 +14,11 @@
 <body>
 <div class="divmain" >
 	<div class="divinner">
-    <h4> Enter login and password</h3>
+    <h4> Enter login and password</h4>
 <form method="post" action="/ProviderServlet/login">
 <p>Login <input align="right" class="simple-input" type="text" name="login"> </p>
 <p>Password <input class="simple-input" type="password" name="password"> </p>
-<p align="center">
-  <input class="button"  type="submit" value="Login">
-  <input class="button"  type="reset" value="Reset"></form> </p>
+<p align="center"> <input class="button"  type="submit" value="Login"> <input class="button"  type="reset" value="Reset"></form> </p>
   <span style="font-size: 15px; color:#FF0004; text-align:left" class="status"><c:out value="${auth}" /></span>
 	</div>
 </div>

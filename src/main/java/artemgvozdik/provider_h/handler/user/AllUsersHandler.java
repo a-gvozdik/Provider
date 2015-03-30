@@ -15,7 +15,7 @@ import artemgvozdik.provider_h.bean.User;
 import artemgvozdik.provider_h.dao.UserDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class AllUsersHandler extends Handler {
+public class AllUsersHandler implements Handler {
 	static Logger logger = Logger.getLogger(AllUsersHandler.class);
 
 	public void doAction(HttpServletRequest req, HttpServletResponse resp) {

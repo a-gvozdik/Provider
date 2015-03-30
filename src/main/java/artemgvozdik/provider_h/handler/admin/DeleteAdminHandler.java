@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
 import artemgvozdik.provider_h.dao.AdminDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class DeleteAdminHandler extends Handler {
+public class DeleteAdminHandler implements Handler {
 	static Logger logger = Logger.getLogger(DeleteAdminHandler.class);
 
 	@Override

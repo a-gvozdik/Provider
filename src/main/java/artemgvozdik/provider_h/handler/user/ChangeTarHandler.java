@@ -14,7 +14,7 @@ import artemgvozdik.provider_h.bean.User;
 import artemgvozdik.provider_h.dao.UserDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class ChangeTarHandler extends Handler {
+public class ChangeTarHandler implements Handler {
 	static Logger logger = Logger.getLogger(ChangeTarHandler.class);
 
 	@Override

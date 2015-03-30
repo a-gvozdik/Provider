@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
-public class LogoutHandler extends Handler {
+public class LogoutHandler implements Handler {
 	static Logger logger = Logger.getLogger(LogoutHandler.class);
 
 	@Override

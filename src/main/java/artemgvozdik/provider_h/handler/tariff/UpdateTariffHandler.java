@@ -13,7 +13,7 @@ import artemgvozdik.provider_h.bean.Tariff;
 import artemgvozdik.provider_h.dao.TariffDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class UpdateTariffHandler extends Handler {
+public class UpdateTariffHandler implements Handler {
 	static Logger logger = Logger.getLogger(UpdateTariffHandler.class);
 
 	@Override

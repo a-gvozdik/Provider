@@ -15,7 +15,7 @@ import artemgvozdik.provider_h.bean.ActiveService;
 import artemgvozdik.provider_h.dao.UserServiceDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class GetUserOrdersHandler extends Handler {
+public class GetUserOrdersHandler implements Handler {
 	static Logger logger = Logger.getLogger(GetUserOrdersHandler.class);
 
 	@Override

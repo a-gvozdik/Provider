@@ -13,7 +13,7 @@ import artemgvozdik.provider_h.bean.User;
 import artemgvozdik.provider_h.dao.UserDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class GetUserHandler extends Handler {
+public class GetUserHandler implements Handler {
 	static Logger logger = Logger.getLogger(GetUserHandler.class);
 	@Override
 	public void doAction(HttpServletRequest req, HttpServletResponse resp) {

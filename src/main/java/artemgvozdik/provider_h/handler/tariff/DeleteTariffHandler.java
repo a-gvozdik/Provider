@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
 import artemgvozdik.provider_h.dao.TariffDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class DeleteTariffHandler extends Handler {
+public class DeleteTariffHandler implements Handler {
 	static Logger logger = Logger.getLogger(DeleteTariffHandler.class);
 	@Override
 	public void doAction(HttpServletRequest req, HttpServletResponse resp) {

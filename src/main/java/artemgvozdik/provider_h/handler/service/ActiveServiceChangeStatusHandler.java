@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
 import artemgvozdik.provider_h.dao.ActiveServiceDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class ActiveServiceChangeStatusHandler extends Handler {
+public class ActiveServiceChangeStatusHandler implements Handler {
 	static Logger logger = Logger
 			.getLogger(ActiveServiceChangeStatusHandler.class);
 

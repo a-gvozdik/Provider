@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
 import artemgvozdik.provider_h.dao.UserServiceDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class AddUserServiceHandler extends Handler {
+public class AddUserServiceHandler implements Handler {
 	static Logger logger = Logger.getLogger(AddUserServiceHandler.class);
 
 	@Override

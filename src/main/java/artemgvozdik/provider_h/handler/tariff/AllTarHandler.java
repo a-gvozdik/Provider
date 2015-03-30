@@ -15,7 +15,7 @@ import artemgvozdik.provider_h.bean.Tariff;
 import artemgvozdik.provider_h.dao.TariffDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class AllTarHandler extends Handler {
+public class AllTarHandler implements Handler {
 	static Logger logger = Logger.getLogger(AllTarHandler.class);
 
 	@Override

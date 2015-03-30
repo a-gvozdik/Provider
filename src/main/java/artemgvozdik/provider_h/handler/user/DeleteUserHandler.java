@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
 import artemgvozdik.provider_h.dao.UserDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class DeleteUserHandler extends Handler {
+public class DeleteUserHandler implements Handler {
 	static Logger logger = Logger.getLogger(DeleteUserHandler.class);
 
 	public void doAction(HttpServletRequest req, HttpServletResponse resp) {

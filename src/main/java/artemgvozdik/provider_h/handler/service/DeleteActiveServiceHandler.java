@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
 import artemgvozdik.provider_h.dao.ActiveServiceDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class DeleteActiveServiceHandler extends Handler {
+public class DeleteActiveServiceHandler implements Handler {
 	static Logger logger = Logger.getLogger(DeleteActiveServiceHandler.class);
 
 	@Override

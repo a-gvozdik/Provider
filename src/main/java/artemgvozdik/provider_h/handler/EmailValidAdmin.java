@@ -16,7 +16,7 @@ import artemgvozdik.provider_h.ConnectionFactory;
 import artemgvozdik.provider_h.bean.Admin;
 import artemgvozdik.provider_h.bean.User;
 
-public class EmailValidAdmin extends Handler {
+public class EmailValidAdmin implements Handler {
 	static Logger logger = Logger.getLogger(EmailValid.class);
 
 	@SuppressWarnings("unchecked")

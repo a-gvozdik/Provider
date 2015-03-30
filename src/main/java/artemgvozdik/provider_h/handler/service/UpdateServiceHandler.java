@@ -13,7 +13,7 @@ import artemgvozdik.provider_h.bean.Service;
 import artemgvozdik.provider_h.dao.ServiceDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class UpdateServiceHandler extends Handler {
+public class UpdateServiceHandler implements Handler {
 	static Logger logger = Logger.getLogger(UpdateServiceHandler.class);
 
 	@Override

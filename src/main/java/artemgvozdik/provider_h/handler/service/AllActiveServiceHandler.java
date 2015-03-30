@@ -15,7 +15,7 @@ import artemgvozdik.provider_h.bean.ActiveService;
 import artemgvozdik.provider_h.dao.ActiveServiceDAO;
 import artemgvozdik.provider_h.handler.Handler;
 
-public class AllActiveServiceHandler extends Handler {
+public class AllActiveServiceHandler implements Handler {
 	static Logger logger = Logger.getLogger(AllActiveServiceHandler.class);
 
 	@Override
