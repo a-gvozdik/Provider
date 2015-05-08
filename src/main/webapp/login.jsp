@@ -11,7 +11,7 @@
 <title>Authorization</title>
 </head>
 
-<body>
+<body background="img/back.png">
 <div class="divmain" >
 	<div class="divinner">
     <h4> Enter login and password</h4>

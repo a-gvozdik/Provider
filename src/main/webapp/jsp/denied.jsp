@@ -14,5 +14,6 @@
 <div>
 <h1 align="center"> Access denied </h1>
 <p align="center"> <a href="/ProviderServlet/login.jsp">Login</a> </p>
+</div>
 </body>
 </html>

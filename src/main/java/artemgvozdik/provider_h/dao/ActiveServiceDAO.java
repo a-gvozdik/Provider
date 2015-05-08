@@ -1,6 +1,7 @@
 package artemgvozdik.provider_h.dao;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -23,13 +24,12 @@ public class ActiveServiceDAO {
 			laservice = session.createCriteria(ActiveService.class).list();
 			trans.commit();
 
-			laservice.sort(new StatusSort());
-
 		} catch (Exception e) {
 			logger.error("Exception " + e);
 		} finally {
 			ConnectionFactory.closeSession(session);
 		}
+		Collections.sort(laservice, new StatusSort());
 		return laservice;
 	}
 

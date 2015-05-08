@@ -1,6 +1,7 @@
 package artemgvozdik.provider_h.dao;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class AdminDAO {
 		} finally {
 			ConnectionFactory.closeSession(session);
 		}
-		adminlist.sort(new AdminSort());
+		Collections.sort(adminlist, new AdminSort());
 		return adminlist;
 
 	}

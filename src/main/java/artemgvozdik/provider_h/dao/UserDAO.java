@@ -1,6 +1,7 @@
 package artemgvozdik.provider_h.dao;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class UserDAO {
 		} finally {
 			ConnectionFactory.closeSession(session);
 		}
-		userlist.sort(new UserSort());
+		Collections.sort(userlist, new UserSort());
 		return userlist;
 
 	}
